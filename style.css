@@ -1,0 +1,318 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #032c51, #b20893);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;   /* allow scroll instead of locking height */
+  display: block;      /* remove flex centering so content flows */
+}
+
+/* Center signup/login container only */
+.container, 
+.welcome {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 300px;
+  margin: 50px auto;   /* 👈 keeps it centered */
+}
+
+
+/* Container box */
+.container, .welcome {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 300px;
+}
+
+h2, h1 {
+  color: #333;
+}
+
+input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #4facfe;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00c6ff;
+}
+
+a {
+  color: #4facfe;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  border-top: 2px solid #ddd;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.bottom-nav button {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #333;
+}
+
+.bottom-nav button i {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.bottom-nav button:hover {
+  color: #4facfe;
+}
+
+@media (max-width: 600px) {
+  .bottom-nav button {
+    font-size: 12px;
+  }
+  .bottom-nav button i {
+    font-size: 18px;
+  }
+}
+
+/* Customer Page */
+.customer-container {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.customer-icon {
+  font-size: 60px;
+  color: #4facfe;
+  margin-bottom: 15px;
+}
+
+.customer-container h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.customer-container p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.support-time {
+  font-style: italic;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.whatsapp-btn i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebc57;
+  transform: scale(1.05);
+}
+
+.back-btn {
+  margin-top: 25px;
+  background: #4facfe;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #00c6ff;
+  transform: scale(1.05);
+}
+
+/* Page system */
+.page {
+  display: none;
+}
+.page:not(.hidden) {
+  display: block;
+}
+
+.home-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  padding-top: 80px;   /* 👈 space so header isn’t cut off */
+  padding-bottom: 100px; /* 👈 extra space so content isn’t hidden under navbar */
+  box-sizing: border-box;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .home-content {
+    padding: 15px;
+    padding-top: 70px;
+    padding-bottom: 90px;
+  }
+
+  .story-article table, 
+  .story-article table th, 
+  .story-article table td {
+    display: block;
+    width: 100%;
+  }
+
+  .story-article table th {
+    background: #4facfe;
+    color: #fff;
+    text-align: left;
+  }
+
+  .story-article table td {
+    border-top: none;
+  }
+}
+
+
+.logout-btn:hover {
+  background: #e63946;
+  transform: scale(1.05);
+}
+
+/* Product Section */
+.product-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.product-header {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4facfe;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.order-btn {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background: #1ebc57;
+  transform: scale(1.05);
+}
+.back-btn {
+  background: #4facfe;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #3a8bd9;
+}
+
+
+
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!-- Signup Page -->
+<div class="container" id="signupPage">
+  <h2>Create Account</h2>
+  <input type="text" id="signupUsername" placeholder="Enter Username">
+  <input type="password" id="signupPassword" placeholder="Enter Password">
+  <input type="password" id="confirmPassword" placeholder="Confirm Password">
+  <button onclick="signup()">Sign Up</button>
+  <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+</div>
+
+
+  <!-- Login Page -->
+  <div class="container hidden" id="loginPage">
+    <h2>Login</h2>
+    <input type="text" id="loginUsername" placeholder="Enter Username">
+    <input type="password" id="loginPassword" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
+  </div>
+
+  <!-- Welcome Page -->
+<div class="welcome hidden" id="welcomePage">
+   
+
+  <!-- HOME PAGE -->
+  <div class="page" id="homePage">
+    <header>
+      <h1>Welcome to Our Website 🎉</h1>
+    </header>
+  
+
+<!-- Home Content -->
+<div class="home-content">
+  <article class="blog-article">
+
+    <h2>📚🎬 From Page to Performance: How Storybook Writing and Script Writing Shape Our Stories</h2>
+
+    <h3>✨ Introduction: Why Stories Matter</h3>
+    <p>
+      Stories are more than entertainment—they’re how we make sense of the world. From bedtime tales to blockbuster films, storytelling is woven into every culture, every generation, and every human experience. But behind every great story lies a writer—someone who chooses the words, builds the world, and breathes life into characters.
+    </p>
+    <p>
+      Two of the most powerful forms of storytelling are <strong>storybook writing</strong> and <strong>script writing</strong>. They may look different on the surface—one lives on the page, the other on the screen—but they share a deep connection.
+    </p>
+
+    <h3>📖 What Is Storybook Writing?</h3>
+    <p>Storybook writing is the art of creating written narratives meant to be read. It includes:</p>
+    <ul>
+      <li>Children’s books with colorful illustrations and moral lessons</li>
+      <li>Novels that explore complex characters and emotional journeys</li>
+      <li>Short stories that deliver powerful messages in just a few pages</li>
+      <li>Folktales and myths rooted in cultural heritage</li>
+    </ul>
+    <p><strong>Key Elements:</strong> Narrative voice, descriptive language, internal monologue, and flexible structure.</p>
+
+    <h3>🎬 What Is Script Writing?</h3>
+    <p>
+      Script writing is the foundation of visual storytelling. It’s the written plan for performances—whether on stage, screen, or audio.
+    </p>
+    <ul>
+      <li>Film scripts for movies</li>
+      <li>TV scripts for episodic storytelling</li>
+      <li>Stage plays for live theater</li>
+      <li>Radio dramas for audio-only experiences</li>
+    </ul>
+    <p><strong>Key Elements:</strong> Dialogue-driven storytelling, scene formatting, stage/camera directions, and collaborative nature.</p>
+
+    <h3>🔗 How Are They Connected?</h3>
+    <p>Though their formats differ, storybooks and scripts share the same storytelling DNA. Both rely on:</p>
+
+    <!-- Comparison Table -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Storybook Writing</th>
+            <th>Script Writing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Plot</strong></td>
+            <td>Built through narration</td>
+            <td>Built through scenes and dialogue</td>
+          </tr>
+          <tr>
+            <td><strong>Characters</strong></td>
+            <td>Explored internally and externally</td>
+            <td>Revealed through speech and action</td>
+          </tr>
+          <tr>
+            <td><strong>Theme</strong></td>
+            <td>Woven through prose and symbolism</td>
+            <td>Conveyed through performance and visuals</td>
+          </tr>
+          <tr>
+            <td><strong>Structure</strong></td>
+            <td>Flexible, chapter-based</td>
+            <td>Rigid, act-based</td>
+          </tr>
+          <tr>
+            <td><strong>Audience</strong></td>
+            <td>Imaginative and introspective</td>
+            <td>Immediate and sensory</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>🌍 Cultural Storytelling: A Bridge Between Past and Present</h3>
+    <p>
+      Storytelling is a cultural act. Whether written or performed, stories preserve heritage, teach values, and inspire change. From African oral traditions to global myths, storybooks and scripts ensure that culture lives on.
+    </p>
+
+    <h3>✍️ Writing Tips</h3>
+    <p>
+      For storybooks: use rich description, develop complex characters, experiment with structure.  
+      For scripts: focus on dialogue, think visually, understand timing and pacing, and write with collaboration in mind.
+    </p>
+
+    <h3>🧭 Final Thoughts</h3>
+    <p>
+      Whether you write, read, or watch stories unfold, knowing how storybooks and scripts connect reveals the magic behind every tale—one sparks imagination, the other brings it to life.
+    </p>
+  </article>
+</div>
+  </div>
+
+  
+
+  <!-- CUSTOMER PAGE -->
+  <div class="page hidden" id="customerPage">
+    <div class="customer-container">
+      <i class="fas fa-headset customer-icon"></i>
+      <h2>Customer Service</h2>
+      <p>
+        Our team is here to assist you with <strong>scripts, storybooks, and more</strong>.  
+        We respond quickly and ensure your needs are met with care and professionalism.  
+      </p>
+      <p class="support-time">⏰ Reach out to our support team: <br><strong>10 AM – 6 PM</strong></p>
+      
+      <a href="https://wa.me/2348089905107" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+      </a>
+
+      <!-- Back button -->
+      <button class="back-btn" onclick="goBack()">⬅ Back</button>
+       <!-- Logout Button -->
+      <p>You are successfully logged in.</p>
+    <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT PAGE -->
+<div class="page hidden" id="productPage">
+  <div class="product-container">
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="showPage('homePage')">⬅ Back</button>
+
+    <h2 class="product-header">✨ RECOMMENDATIONS FROM MRS AGBOGA ✨</h2>
+
+    <div class="product-grid">
+      <!-- Storybook -->
+      <div class="product-card">
+        <h3>📚 The Little Star</h3>
+        <p>A magical children’s bedtime story that teaches kindness and hope.</p>
+        <a href="https://wa.me/2348089905107" target="_blank" class="order-btn">
+          Order on WhatsApp
+        </a>
+      </div>
+
+      <!-- Script -->
+      <div class="product-card">
+        <h3>🎭 The Last Sunset</h3>
+        <p>A moving short film script about love, loss, and second chances.</p>
+        <a href="https://wa.me/2348089905107" target="_blank" class="order-btn">
+          Order on WhatsApp
+        </a>
+      </div>
+
+      <!-- Novel -->
+      <div class="product-card">
+        <h3>📖 Tears of the Savannah</h3>
+        <p>An emotional Nigerian drama novel filled with twists and suspense.</p>
+        <a href="https://wa.me/2348089905107" target="_blank" class="order-btn">
+          Order on WhatsApp
+        </a>
+      </div>
+
+      <!-- Newspaper -->
+      <div class="product-card">
+        <h3>📰 Daily Highlights</h3>
+        <p>Stay updated with curated news, stories, and insights every morning.</p>
+        <a href="https://wa.me/2348089905107" target="_blank" class="order-btn">
+          Subscribe Now
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav" id="bottomNav">
+    <button onclick="showHome()"><i class="fas fa-home"></i><br>Home</button>
+    <button onclick="showProduct()"><i class="fas fa-box-open"></i><br>Product</button>
+    <button onclick="showCustomer()"><i class="fas fa-users"></i><br>Customer</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

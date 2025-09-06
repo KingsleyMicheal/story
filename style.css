@@ -1,34 +1,26 @@
-/* General styling */
+/* General Styling */
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #032c51, #b20893);
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4);
   margin: 0;
   padding: 0;
-  min-height: 100vh;   /* allow scroll instead of locking height */
-  display: block;      /* remove flex centering so content flows */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Center signup/login container only */
-.container, 
-.welcome {
+.hidden { display: none; }
+
+/* Container */
+.container {
   background: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   text-align: center;
-  width: 300px;
-  margin: 50px auto;   /* 👈 keeps it centered */
-}
-
-
-/* Container box */
-.container, .welcome {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  text-align: center;
-  width: 300px;
+  width: 320px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 h2, h1 {
@@ -39,280 +31,525 @@ input {
   display: block;
   width: 90%;
   margin: 10px auto;
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
 
 button {
-  background: #4facfe;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 12px;
   margin-top: 10px;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
   transition: 0.3s;
 }
 
 button:hover {
-  background: #00c6ff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-a {
-  color: #4facfe;
+/* Birthday Page */
+.birthday-page {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+
+.birthday-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.celebrant-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.8);
+  transition: transform 0.4s;
+}
+
+.celebrant-pic:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Sleek Bottom Navbar */
+.birthday-nav {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 8px 16px;
+  z-index: 999;
+}
+
+.birthday-nav button {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
-  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 6px 0;
 }
 
+.birthday-nav button i {
+  font-size: 18px;
+  margin-bottom: 3px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.birthday-nav button:hover i {
+  transform: translateY(-3px);
+  color: #ff6ec4;
+}
+
+.birthday-nav button span {
+  font-size: 12px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Birthday Home Page */
+.birthday-hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  color: white;
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.birthday-hero h1 {
+  font-size: 26px;
+  animation: pop 1.5s ease forwards;
+}
+
+.birthday-hero .subtitle {
+  margin-top: 10px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.birthday-message {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.birthday-message p {
+  margin-bottom: 18px;
+}
+
+.birthday-message .ending {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6ec4;
+}
+.birthday-message {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  padding-bottom: 100px; /* extra space for navbar */
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+
+/* Floating birthday icons */
+.falling-icon {
+  position: fixed;
+  top: -50px;
+  font-size: 24px;
+  animation: fall linear forwards;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fall {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Gift Page */
+.gift-container {
+  text-align: center;
+  padding: 30px 20px;
+  padding-bottom: 120px; /* extra space so bottom button isn't blocked */
+  box-sizing: border-box;
+}
+
+/* Header and Subtitle */
+.gift-header {
+  font-size: 22px;
+  color: #ff6ec4;
+  margin-bottom: 8px;
+}
+
+.gift-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Account Box */
+.account-box {
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  margin-bottom: 25px;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}
+
+/* Account Box Paragraphs */
+.account-box p {
+  margin: 10px 0;
+}
+
+/* Confirm Button */
+.confirm-btn {
+  background: linear-gradient(135deg, #7873f5, #4facfe);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  display: inline-block;
+  margin-bottom: 30px; /* space from bottom nav */
+}
+
+.confirm-btn:hover {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  transform: scale(1.05);
+}
+
+/* Prayer Popup */
+.prayer-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  padding: 25px;
+  max-width: 350px;
+  text-align: center;
+  z-index: 9999;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.prayer-popup h3 {
+  color: #ff6ec4;
+  margin-bottom: 10px;
+}
+
+.prayer-popup p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Hidden by default */
 .hidden {
   display: none;
 }
 
-/* Bottom Navigation */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  display: flex;
-  justify-content: space-around;
-  padding: 8px 0;
-  border-top: 2px solid #ddd;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-  z-index: 100;
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translate(-50%, -60%); }
+  100% { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-.bottom-nav button {
-  flex: 1;
-  border: none;
-  background: none;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  color: #333;
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
-.bottom-nav button i {
-  font-size: 20px;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.bottom-nav button:hover {
-  color: #4facfe;
-}
-
+/* Mobile */
 @media (max-width: 600px) {
-  .bottom-nav button {
-    font-size: 12px;
+  .account-box {
+    font-size: 14px;
+    padding: 15px;
   }
-  .bottom-nav button i {
-    font-size: 18px;
+  .confirm-btn {
+    font-size: 14px;
+    padding: 12px 18px;
+    margin-bottom: 40px; /* extra space for nav bar */
   }
 }
 
-/* Customer Page */
-.customer-container {
-  text-align: center;
-  padding: 30px 20px;
+/* Make gift page scrollable */
+#giftPage {
+  overflow-y: auto;
+  height: 100vh; /* fill viewport height */
+  padding-bottom: 120px; /* prevent content being blocked by bottom nav */
 }
 
-.customer-icon {
-  font-size: 60px;
-  color: #4facfe;
-  margin-bottom: 15px;
-}
 
-.customer-container h2 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.customer-container p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
-
-.support-time {
-  font-style: italic;
-  color: #444;
-  margin-bottom: 25px;
-}
-
-/* WhatsApp Button */
-.whatsapp-btn {
-  display: inline-block;
-  background: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 16px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.whatsapp-btn i {
-  margin-right: 8px;
-  font-size: 18px;
-}
-
-.whatsapp-btn:hover {
-  background: #1ebc57;
-  transform: scale(1.05);
-}
-
-.back-btn {
-  margin-top: 25px;
-  background: #4facfe;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.back-btn:hover {
-  background: #00c6ff;
-  transform: scale(1.05);
-}
-
-/* Page system */
-.page {
-  display: none;
-}
-.page:not(.hidden) {
-  display: block;
-}
-
-.home-content {
+/* WISH PAGE */
+.wish-container {
   max-width: 900px;
   margin: auto;
   padding: 20px;
-  padding-top: 80px;   /* 👈 space so header isn’t cut off */
-  padding-bottom: 100px; /* 👈 extra space so content isn’t hidden under navbar */
-  box-sizing: border-box;
-}
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .home-content {
-    padding: 15px;
-    padding-top: 70px;
-    padding-bottom: 90px;
-  }
-
-  .story-article table, 
-  .story-article table th, 
-  .story-article table td {
-    display: block;
-    width: 100%;
-  }
-
-  .story-article table th {
-    background: #4facfe;
-    color: #fff;
-    text-align: left;
-  }
-
-  .story-article table td {
-    border-top: none;
-  }
-}
-
-
-.logout-btn:hover {
-  background: #e63946;
-  transform: scale(1.05);
-}
-
-/* Product Section */
-.product-container {
-  padding: 20px;
+  padding-top: 80px;   /* for header spacing */
+  padding-bottom: 100px; /* for navbar spacing */
   text-align: center;
+  overflow-y: auto;
 }
 
-.product-header {
-  font-size: 20px;
-  font-weight: bold;
-  color: #4facfe;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.product-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: left;
-  transition: transform 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-card h3 {
-  font-size: 18px;
+.wish-header {
+  font-size: 26px;
+  color: #ff4ec4;
   margin-bottom: 10px;
-  color: #333;
+  text-shadow: 2px 2px 5px #ffd1f9;
 }
 
-.product-card p {
-  font-size: 14px;
+.wish-note {
+  font-size: 16px;
   color: #555;
-  margin-bottom: 15px;
-  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
-.order-btn {
+textarea#wishText {
+  width: 90%;
+  max-width: 800px;
+  height: 200px;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #ff4ec4;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.send-wish-btn {
   display: inline-block;
-  background: #25D366;
+  background: #ff4ec4;
   color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-size: 14px;
-  text-decoration: none;
   font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-.order-btn:hover {
-  background: #1ebc57;
+.send-wish-btn:hover {
+  background: #ff2fa6;
   transform: scale(1.05);
 }
+
 .back-btn {
   background: #4facfe;
   color: white;
   border: none;
   padding: 8px 15px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   transition: 0.3s;
 }
 
 .back-btn:hover {
-  background: #3a8bd9;
+  background: #00c6ff;
+  transform: scale(1.05);
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  textarea#wishText {
+    width: 95%;
+    height: 180px;
+  }
+}
 
+/* Memories Page */
+.memories-container {
+  text-align: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.memories-header {
+  font-size: 26px;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  margin-bottom: 10px;
+}
 
+.memories-note {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.memories-action {
+  display: block;
+  width: 220px;
+  padding: 15px;
+  margin: 12px auto;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* View Memories Button */
+.view-btn {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+/* Logout Button */
+.logout-btn {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* Hover Effects */
+.memories-action:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Glitter Animation */
+.memories-action::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.2);
+  transform: rotate(25deg);
+  animation: glitter 3s linear infinite;
+}
+
+@keyframes glitter {
+  0% { transform: rotate(25deg) translateX(-100%); }
+  100% { transform: rotate(25deg) translateX(100%); }
+}
+
+/* Background Gradient Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .memories-action {
+    width: 180px;
+    font-size: 16px;
+    padding: 12px;
+  }
+  .memories-header {
+    font-size: 22px;
+  }
+}
+
+/* Fade out effect */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.celebrant-img {
+  width: 150px;       /* adjust size */
+  height: 150px;      /* adjust size */
+  border-radius: 50%; /* makes it round */
+  display: block;
+  margin: 0 auto 20px auto; /* center it and add bottom spacing */
+  object-fit: cover;  /* crop image nicely */
+}
+
+.memory-list {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 20px; /* space between memories */
+  max-width: 600px; /* optional, center content */
+  margin: auto;
+  padding: 10px;
+}
+
+.memory-item img,
+.memory-item video {
+  width: 100%;       /* fill container width */
+  max-width: 400px;  /* don’t get too big on desktop */
+  height: auto;      /* keep aspect ratio */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.memory-item p {
+  text-align: center;
+  font-size: 24px;  /* emoji size */
+  margin-top: 5px;
+}
+
+/* Make sure it’s mobile responsive */
+@media (max-width: 480px) {
+  .memory-item img,
+  .memory-item video {
+    max-width: 100%; /* fill small screens */
+  }
+}

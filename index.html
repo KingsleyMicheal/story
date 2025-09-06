@@ -3,223 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Website</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Fantasy Birthday Website 🎂</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
- <!-- Signup Page -->
-<div class="container" id="signupPage">
-  <h2>Create Account</h2>
-  <input type="text" id="signupUsername" placeholder="Enter Username">
-  <input type="password" id="signupPassword" placeholder="Enter Password">
-  <input type="password" id="confirmPassword" placeholder="Confirm Password">
-  <button onclick="signup()">Sign Up</button>
-  <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+      <!--SIGNUP PAGE-->
+  <div class="page active" id="signupPage">
+  <div class="container">
+    <h2>Signup 🎉</h2>
+    <input type="text" id="signupUsername" placeholder="Enter Username">
+    <input type="password" id="signupPassword" placeholder="Enter Password">
+    <input type="password" id="signupConfirm" placeholder="Confirm Password">
+    <button onclick="signup()">Signup</button>
+    <p>Already have an account? <a href="#" onclick="showPage('loginPage')">Login</a></p>
+  </div>
 </div>
 
-
-  <!-- Login Page -->
-  <div class="container hidden" id="loginPage">
-    <h2>Login</h2>
+      <!--LOGIN PAGE-->
+<div class="page hidden" id="loginPage">
+  <div class="container">
+    <h2>Login 🔑</h2>
     <input type="text" id="loginUsername" placeholder="Enter Username">
     <input type="password" id="loginPassword" placeholder="Enter Password">
     <button onclick="login()">Login</button>
-    <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
+    <p>Don’t have an account? <a href="#" onclick="showPage('signupPage')">Signup</a></p>
   </div>
+</div>
 
-  <!-- Welcome Page -->
-<div class="welcome hidden" id="welcomePage">
-   
+  <!-- PLATFORM WRAPPER -->
+<div id="platform" class="hidden">
 
   <!-- HOME PAGE -->
-  <div class="page" id="homePage">
-    <header>
-      <h1>Welcome to Our Website 🎉</h1>
-    </header>
-  
+<div class="page hidden" id="homePage">
 
-<!-- Home Content -->
-<div class="home-content">
-  <article class="blog-article">
 
-    <h2>📚🎬 From Page to Performance: How Storybook Writing and Script Writing Shape Our Stories</h2>
+  <div class="birthday-hero">
+    <img src="photo1.jpg" alt="Quincy Treasure" class="celebrant-img">
+    <h1>🎉 Happy Birthday, Quincy Treasure 🎉</h1>
+    <p class="subtitle">A celebration of love, laughter, and memories 💖</p>
+  </div>
 
-    <h3>✨ Introduction: Why Stories Matter</h3>
+  <div class="birthday-message">
     <p>
-      Stories are more than entertainment—they’re how we make sense of the world. From bedtime tales to blockbuster films, storytelling is woven into every culture, every generation, and every human experience. But behind every great story lies a writer—someone who chooses the words, builds the world, and breathes life into characters.
-    </p>
-    <p>
-      Two of the most powerful forms of storytelling are <strong>storybook writing</strong> and <strong>script writing</strong>. They may look different on the surface—one lives on the page, the other on the screen—but they share a deep connection.
+      Today, the world pauses to celebrate a rare gem — <strong>you, Quincy Treasure</strong>.  
+      You are more than a name, more than a face in the crowd — you are the light that makes my darkest days brighter, the calm in the storm, and the laughter in my silence.  
     </p>
 
-    <h3>📖 What Is Storybook Writing?</h3>
-    <p>Storybook writing is the art of creating written narratives meant to be read. It includes:</p>
-    <ul>
-      <li>Children’s books with colorful illustrations and moral lessons</li>
-      <li>Novels that explore complex characters and emotional journeys</li>
-      <li>Short stories that deliver powerful messages in just a few pages</li>
-      <li>Folktales and myths rooted in cultural heritage</li>
-    </ul>
-    <p><strong>Key Elements:</strong> Narrative voice, descriptive language, internal monologue, and flexible structure.</p>
-
-    <h3>🎬 What Is Script Writing?</h3>
     <p>
-      Script writing is the foundation of visual storytelling. It’s the written plan for performances—whether on stage, screen, or audio.
-    </p>
-    <ul>
-      <li>Film scripts for movies</li>
-      <li>TV scripts for episodic storytelling</li>
-      <li>Stage plays for live theater</li>
-      <li>Radio dramas for audio-only experiences</li>
-    </ul>
-    <p><strong>Key Elements:</strong> Dialogue-driven storytelling, scene formatting, stage/camera directions, and collaborative nature.</p>
-
-    <h3>🔗 How Are They Connected?</h3>
-    <p>Though their formats differ, storybooks and scripts share the same storytelling DNA. Both rely on:</p>
-
-    <!-- Comparison Table -->
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Element</th>
-            <th>Storybook Writing</th>
-            <th>Script Writing</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Plot</strong></td>
-            <td>Built through narration</td>
-            <td>Built through scenes and dialogue</td>
-          </tr>
-          <tr>
-            <td><strong>Characters</strong></td>
-            <td>Explored internally and externally</td>
-            <td>Revealed through speech and action</td>
-          </tr>
-          <tr>
-            <td><strong>Theme</strong></td>
-            <td>Woven through prose and symbolism</td>
-            <td>Conveyed through performance and visuals</td>
-          </tr>
-          <tr>
-            <td><strong>Structure</strong></td>
-            <td>Flexible, chapter-based</td>
-            <td>Rigid, act-based</td>
-          </tr>
-          <tr>
-            <td><strong>Audience</strong></td>
-            <td>Imaginative and introspective</td>
-            <td>Immediate and sensory</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>🌍 Cultural Storytelling: A Bridge Between Past and Present</h3>
-    <p>
-      Storytelling is a cultural act. Whether written or performed, stories preserve heritage, teach values, and inspire change. From African oral traditions to global myths, storybooks and scripts ensure that culture lives on.
+      Since life brought us together, every moment has been a gift. We’ve shared dreams, tears, silly jokes, and priceless memories that no time or distance can ever erase.  
+      In you, I’ve found not just love, but a partner, a friend, and my greatest treasure.  
     </p>
 
-    <h3>✍️ Writing Tips</h3>
     <p>
-      For storybooks: use rich description, develop complex characters, experiment with structure.  
-      For scripts: focus on dialogue, think visually, understand timing and pacing, and write with collaboration in mind.
+      Quincy, I love you for your kindness, your strength, and the way you make even the simplest moments magical. You remind me that love is not just spoken in words but shown in the little things — the smiles, the care, the patience, the way you understand me even when I say nothing.  
     </p>
 
-    <h3>🧭 Final Thoughts</h3>
     <p>
-      Whether you write, read, or watch stories unfold, knowing how storybooks and scripts connect reveals the magic behind every tale—one sparks imagination, the other brings it to life.
+      As you step into this new year of your life, I wish you unending joy, health, and the fulfillment of every dream you carry in your heart. May your days be filled with sunshine, your nights with peace, and your journey with success.  
     </p>
-  </article>
+
+    <p>
+      💖 <em>Here’s to many more memories, to laughter that never fades, and to love that only grows stronger.</em> 💖  
+    </p>
+
+    <p class="ending">✨ Happy Birthday, My Love, My Treasure ✨</p>
+  </div>
 </div>
-  </div>
 
-  
+<!-- GIFT PAGE -->
+<div class="page hidden" id="giftPage">
+  <div class="gift-container">
+    
+    <!-- Back Button -->
+    <button class="back-btn" onclick="showPage('homePage')">⬅ Back</button>
+    
+    <h2 class="gift-header">🎁 Send Your Birthday Gift 🎁</h2>
+    <p class="gift-subtitle">Your love and generosity make this celebration special 💖</p>
 
-  <!-- CUSTOMER PAGE -->
-  <div class="page hidden" id="customerPage">
-    <div class="customer-container">
-      <i class="fas fa-headset customer-icon"></i>
-      <h2>Customer Service</h2>
-      <p>
-        Our team is here to assist you with <strong>scripts, storybooks, and more</strong>.  
-        We respond quickly and ensure your needs are met with care and professionalism.  
-      </p>
-      <p class="support-time">⏰ Reach out to our support team: <br><strong>10 AM – 6 PM</strong></p>
-      
-      <a href="https://wa.me/2348089905107" target="_blank" class="whatsapp-btn">
-        <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
-      </a>
-
-      <!-- Back button -->
-      <button class="back-btn" onclick="goBack()">⬅ Back</button>
-       <!-- Logout Button -->
-      <p>You are successfully logged in.</p>
-    <button onclick="logout()">Logout</button>
+    <!-- Account Details -->
+    <div class="account-box">
+      <p><strong>Account Name:</strong> <span id="accountName">QUINCY TREASURE</span></p>
+      <p><strong>Account Number:</strong> <span id="accountNumber">1234567890</span></p>
+      <p><strong>Bank Name:</strong> <span id="bankName">ACCESS BANK</span></p>
     </div>
+
+    <!-- Confirm Button -->
+    <button class="confirm-btn" onclick="confirmPayment()">✅ Confirm Payment</button>
   </div>
 
-  <!-- PRODUCT PAGE -->
-<div class="page hidden" id="productPage">
-  <div class="product-container">
+  <!-- Popup -->
+  <div id="prayerPopup" class="prayer-popup hidden">
+    <h3>🙏 Thank You!</h3>
+    <p>
+      May blessings follow you always, may joy fill your heart,  
+      and may abundance never depart from your home.  
+      Your gift is truly appreciated 💖
+    </p>
+  </div>
+</div>
+
+<!-- WISH PAGE -->
+<div class="page hidden" id="wishPage">
+  <div class="wish-container">
 
     <!-- Back Button -->
     <button class="back-btn" onclick="showPage('homePage')">⬅ Back</button>
 
-    <h2 class="product-header">✨ RECOMMENDATIONS FROM MRS AGBOGA ✨</h2>
+    <h2 class="wish-header">💌 MAKE YOUR WISH</h2>
+    <p class="wish-note">Share your heartfelt message for Quincy Treasure!</p>
 
-    <div class="product-grid">
-      <!-- Storybook -->
-      <div class="product-card">
-        <h3>📚 The Little Star</h3>
-        <p>A magical children’s bedtime story that teaches kindness and hope.</p>
-        <a href="https://wa.me/2348089905107" target="_blank" class="order-btn">
-          Order on WhatsApp
-        </a>
+    <textarea id="wishText" maxlength="3000" placeholder="Type your wish here..." rows="10"></textarea>
+
+    <a href="#" id="sendWishBtn" class="send-wish-btn" target="_blank">
+      Send Wish
+    </a>
+  </div>
+</div>
+
+
+<!-- MEMORY VIEW PAGE -->
+<div class="page hidden" id="memoryPage">
+  <div class="memory-container">
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="showPage('memoriesPage')">⬅ Back</button>
+
+    <h2 class="memory-header">💖 Quincy Memory 💖</h2>
+
+    <div class="memory-list">
+      <!-- Image Memory 1 -->
+      <div class="memory-item">
+        <img src="photo5.png" alt="Memory 1">
+        <p>😊</p>
       </div>
 
-      <!-- Script -->
-      <div class="product-card">
-        <h3>🎭 The Last Sunset</h3>
-        <p>A moving short film script about love, loss, and second chances.</p>
-        <a href="https://wa.me/2348089905107" target="_blank" class="order-btn">
-          Order on WhatsApp
-        </a>
+      <!-- Image Memory 2 -->
+      <div class="memory-item">
+        <img src="photo2.png" alt="Memory 2">
+        <p>😂</p>
       </div>
 
-      <!-- Novel -->
-      <div class="product-card">
-        <h3>📖 Tears of the Savannah</h3>
-        <p>An emotional Nigerian drama novel filled with twists and suspense.</p>
-        <a href="https://wa.me/2348089905107" target="_blank" class="order-btn">
-          Order on WhatsApp
-        </a>
+      <!-- Image Memory 3 -->
+      <div class="memory-item">
+        <img src="photo3.jpg" alt="Memory 3">
+        <p>😍</p>
       </div>
 
-      <!-- Newspaper -->
-      <div class="product-card">
-        <h3>📰 Daily Highlights</h3>
-        <p>Stay updated with curated news, stories, and insights every morning.</p>
-        <a href="https://wa.me/2348089905107" target="_blank" class="order-btn">
-          Subscribe Now
-        </a>
+      <!-- Image Memory 4 -->
+      <div class="memory-item">
+        <img src="phot4.jpg" alt="Memory 4">
+        <p>🥰</p>
+      </div>
+
+      <!-- Image Memory 5 -->
+      <div class="memory-item">
+        <img src="photo1.jpg" alt="Memory 5">
+        <p>♥</p>
       </div>
     </div>
+
   </div>
 </div>
 
 
-  <!-- Bottom Navigation -->
-  <div class="bottom-nav" id="bottomNav">
-    <button onclick="showHome()"><i class="fas fa-home"></i><br>Home</button>
-    <button onclick="showProduct()"><i class="fas fa-box-open"></i><br>Product</button>
-    <button onclick="showCustomer()"><i class="fas fa-users"></i><br>Customer</button>
+
+<!-- MEMORIES PAGE -->
+<div class="page hidden" id="memoriesPage">
+  <div class="memories-container">
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="showPage('homePage')">⬅ Back</button>
+
+    <h2 class="memories-header">🌟 MEMORIES 🌟</h2>
+    <p class="memories-note">Choose an option below</p>
+
+    <!-- Buttons -->
+    <button class="memories-action view-btn" onclick="showPage('memoryPage')">
+      📸 View Memories
+    </button>
+
+    <button class="memories-action logout-btn" onclick="logout()">
+      🚪 Logout
+    </button>
+
   </div>
 </div>
+
+  <!-- Bottom Navbar -->
+  <div class="birthday-nav">
+    <button onclick="showPage('giftPage')">
+  <i class="fas fa-gift"></i><br>Gift
+</button>
+    <button onclick="showPage('wishPage')">
+  <i class="fas fa-heart"></i><br>Wish
+</button>
+    <button id="memoriesBtn" onclick="showPage('memoriesPage')">
+  <i class="fas fa-book"></i><br>Memories
+</button>
+    </div>
+
+  </div>
+
 
 
   <script src="script.js"></script>
